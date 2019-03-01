@@ -4,11 +4,11 @@ import rootReducer from './../reducers/main.js';
 
 // TODO:  Create your redux store, apply thunk as a middleware, and export it!
 
-const state = {
+const initialState = {
   videoList: [],
   currentVideo: null,
 };
 
-const store = createStore(rootReducer, state, applyMiddleware(thunk));
+const store = createStore(rootReducer, initialState, applyMiddleware(thunk));
 
 export default store;
