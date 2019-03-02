@@ -6,8 +6,17 @@ import handleSearchChange from '../actions/search.js';
 
 
 var SearchContainer = () => {
-  
+  <Nav />
 };
+
+// const mapStateToProps = (state) => ({handleSearchInputChange: })
+const mapDispatchToProps = (dispatch) => ({
+  handleSearchInputChange: (string) => {
+    dispatch(handleSearchChange(string));
+  }
+});
+
+SearchContainer = connect(null, mapDispatchToProps)(SearchContainer);
 
 //TODO: define a SearchContainer component which will hook up your action
 // dispatchers with your search component props.

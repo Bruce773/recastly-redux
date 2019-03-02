@@ -3,15 +3,21 @@ import VideoList from './../components/VideoList.js';
 import changeVideo from './../actions/currentVideo.js';
 import store from '../store/store.js';
 
-var VideoListContainer = ({ dispatch }) => {
-  <VideoList
-
-    handleVideoListEntryTitleClick={changeVideo}
-    videos={store.getState().VideoList}
-  />;
+var VideoListContainer = () => {
+  <VideoList />;
 };
 
-VideoListContainer = connect()(VideoListContainer);
+const mapStateToProps = (state) => ({ videos: state.videoList });
+const mapDispatchToProps = (dispatch) => ({
+  handleVideoListEntryTitleClick: (video) => {
+    dispatch(changeVideo(video));
+  },
+});
+
+VideoListContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(VideoListContainer);
 // connecto vidoeList component
 // component needs videoList array (list)
 // onClick={() => handleVideoListEntryTitleClick(video)}

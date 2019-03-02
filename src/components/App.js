@@ -1,6 +1,7 @@
 import React from 'react';
 import VideoListContainer from '../containers/VideoListContainer.js';
 import VideoPlayerContainer from '../containers/VideoPlayerContainer.js';
+import SearchContainer from '../containers/SearchContainer.js'
 import Nav from './Nav.js';
 import VideoPlayer from './VideoPlayer.js';
 import VideoList from './VideoList.js';
@@ -8,6 +9,7 @@ import changeVideo from '../actions/currentVideo.js';
 import changeVideoList from '../actions/videoList.js';
 import exampleVideoData from '../data/exampleVideoData.js';
 import store from '../store/store.js';
+
 
 export default class App extends React.Component {
   constructor(props) {
@@ -46,10 +48,10 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <Nav handleSearchInputChange={this.getYouTubeVideos.bind(this)} />
+        <SearchContainer />
         <div className="row">
           <div className="col-md-7">
-            <VideoPlayer video={this.state.currentVideo} />
+            <VideoPlayerContainer />
           </div>
           <div className="col-md-5">
             <VideoListContainer />
