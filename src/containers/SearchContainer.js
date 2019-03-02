@@ -2,12 +2,11 @@ import React from 'react';
 import Search from './../components/Search.js';
 import { connect } from 'react-redux';
 import handleSearchChange from '../actions/search.js';
+import Nav from './../components/Nav';
 
-
-
-var SearchContainer = () => {
+var SearchContainer = () => (
   <Nav />
-};
+);
 
 // const mapStateToProps = (state) => ({handleSearchInputChange: })
 const mapDispatchToProps = (dispatch) => ({
