@@ -4,9 +4,9 @@ import VideoList from './../components/VideoList.js';
 import changeVideo from './../actions/currentVideo.js';
 import store from '../store/store.js';
 
-var VideoListContainer = () => (
-  <VideoList />
-);
+// var VideoListContainer = () => (
+//   <VideoList />
+// );
 
 const mapStateToProps = (state) => ({ videos: state.videoList });
 const mapDispatchToProps = (dispatch) => ({
@@ -15,10 +15,10 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
-VideoListContainer = connect(
+const VideoListContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(VideoListContainer);
+)(VideoList);
 // connecto vidoeList component
 // component needs videoList array (list)
 // onClick={() => handleVideoListEntryTitleClick(video)}
